@@ -1,32 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 
 public class GetScore : MonoBehaviour
 {
-    
+    [Header("Text placeholders")]
     public Text winCount;
     public Text loseCount;
     // Start is called before the first frame update
     void Start()
     {
-        UpdateWinText();
-        UpdateLoseText();
+        SetWinCount();
+        SetLoseCount();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetWinCount()
     {
-        
+        winCount.text = HangManGameManager.winCount.ToString();
     }
-    public void UpdateWinText()
+    public void SetLoseCount()
     {
-        winCount.text = HangManGameManager.WinCount.ToString();
-    }
-   public void UpdateLoseText()
-    {
-        loseCount.text = HangManGameManager.LoseCount.ToString();
+        loseCount.text = HangManGameManager.loseCount.ToString();
     }
 }
